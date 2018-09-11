@@ -1,0 +1,18 @@
+{
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "workbench.colorTheme": "Monokai",
+    "editor.fontSize": 15,
+    "editor.fontFamily": "Roboto Mono",
+    "editor.fontLigatures": true,
+    "window.menuBarVisibility": "toggle",
+    //"editor.scrollbar.verticalScrollbarSize": 8,
+    //"editor.scrollbar.horizontalScrollbarSize": 5,
+    "workbench.colorCustomizations": {
+        "statusBar.background" : "#303030",
+        "statusBar.noFolderBackground" : "#222225",
+        "statusBar.debuggingBackground": "#511f1f",
+        "editorLineNumber.foreground": "#999999",
+    },
+    "workbench.statusBar.feedback.visible": false,
+}

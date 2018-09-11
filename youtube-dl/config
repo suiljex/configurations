@@ -1,0 +1,1 @@
+-f "bestvideo+bestaudio/best" -o ~/youtube-dl/%(title)s.%(ext)s --recode-video mp4

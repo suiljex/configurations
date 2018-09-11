@@ -1,27 +1,35 @@
+" suiljex
 
 " ========== PLUGINS ==========
 " https://github.com/junegunn/vim-plug
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
-call plug#begin('~/.vim/plugged')
+"
+try
+  call plug#begin('~/.vim/plugged')
 
 " Project tree
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
 " ColorScheme
-Plug 'morhetz/gruvbox'
+  Plug 'morhetz/gruvbox'
 
 " Search
-Plug 'rking/ag.vim'
+  Plug 'rking/ag.vim'
 
 " Initialize plugin system
-call plug#end()
+  call plug#end()
+catch
+endtry
 
 " ========== COLORSCHEME ==========
 
-colorscheme gruvbox
-set background=dark
+try
+  colorscheme gruvbox
+  set background=dark
+catch
+endtry
 
 " ========== CUSTOM ==========
 
