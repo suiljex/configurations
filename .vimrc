@@ -1,6 +1,8 @@
 " suiljex
 
-" ========== PLUGINS ==========
+" [===========================================================================]
+" | PLUGINS 
+" [===========================================================================]
 " https://github.com/junegunn/vim-plug
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -23,17 +25,63 @@ try
 catch
 endtry
 
-" ========== COLORSCHEME ==========
+" [===========================================================================]
+" | COLORSCHEME 
+" [===========================================================================]
 
 try
-  colorscheme gruvbox
+  colorscheme solarized
+  " colorscheme gruvbox
   set background=dark
 catch
 endtry
 
-" ========== CUSTOM ==========
+" [===========================================================================]
+" | CUSTOM 
+" [===========================================================================]
 
-set number    " показывать номера строк
+set autoread                          " Auto reload changed files
+set wildmenu                          " Tab autocomplete in command mode
+set backspace=indent,eol,start        " http://vi.stackexchange.com/a/2163
+set clipboard=unnamed                 " Clipboard support (OSX)
+set laststatus=2                      " Show status line on startup
+set splitright                        " Open new splits to the right
+set splitbelow                        " Open new splits to the bottom
+set lazyredraw                        " Reduce the redraw frequency
+set ttyfast                           " Send more characters in fast terminals
+set nowrap                            " Don't wrap long lines
+set listchars=extends:→               " Show arrow if line continues rightwards
+set listchars+=precedes:←             " Show arrow if line continues leftwards
+set nobackup nowritebackup noswapfile " Turn off backup files
+set noerrorbells novisualbell         " Turn off visual and audible bells
+set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
+set history=500
+set hlsearch                          " Highlight search results
+set ignorecase smartcase              " Search queries intelligently set case
+set incsearch                         " Show search results as you type
+set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
+set showcmd                           " Show size of visual selection
+
+" Persistent undo
+set undodir=~/.vim/undo/
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+" [===========================================================================]
+" | INTERFACE 
+" [===========================================================================]
+
+set number            " Enable line numbers
+set scrolloff=5       " Leave 5 lines of buffer when scrolling
+set sidescrolloff=10  " Leave 10 characters of horizontal buffer when scrolling
+
+" Showcase comments in italics
+highlight Comment cterm=italic gui=italic
+
+" [===========================================================================]
+" | INDENTATION  
+" [===========================================================================]
 
 " Кол-во символов пробелов, которые будут заменять \t
 set tabstop=2
@@ -44,15 +92,6 @@ set expandtab
 
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-
-" Поиск и подсветка результатов поиска и совпадения скобок
-set showmatch
-set hlsearch
-set incsearch
-set ignorecase
-
-" Ленивая перерисовка экрана при выполнении скриптов
-set lazyredraw
 
 " Показываем табы в начале строки точками
 set list
@@ -66,6 +105,8 @@ set langmap=ё`,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,фa,ыs,вd,аf,пg,рh,
 " encodings
 set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
 
-" ========== MAPPING ==========
+" [===========================================================================]
+" | MAPPING 
+" [===========================================================================]
 
 map <C-n> :NERDTreeToggle<CR>
