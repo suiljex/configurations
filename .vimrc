@@ -1,13 +1,16 @@
-" suiljex
+" [==================]
+" | suiljex | .vimrc |
+" [==================]
 
 " [===========================================================================]
-" | PLUGINS 
+" | PLUGINS                                                                   |
 " [===========================================================================]
 " https://github.com/junegunn/vim-plug
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
-"
 try
   call plug#begin('~/.vim/plugged')
 
@@ -16,6 +19,7 @@ try
 
 " ColorScheme
   Plug 'morhetz/gruvbox'
+  Plug 'altercation/vim-colors-solarized'
 
 " Search
   Plug 'rking/ag.vim'
@@ -26,18 +30,20 @@ catch
 endtry
 
 " [===========================================================================]
-" | COLORSCHEME 
+" | COLORSCHEME                                                               |
 " [===========================================================================]
 
 try
-  colorscheme solarized
-  " colorscheme gruvbox
+  " colorscheme solarized
+  colorscheme gruvbox
+
   set background=dark
 catch
 endtry
 
+
 " [===========================================================================]
-" | CUSTOM 
+" | CUSTOM                                                                    |
 " [===========================================================================]
 
 set autoread                          " Auto reload changed files
@@ -52,8 +58,12 @@ set ttyfast                           " Send more characters in fast terminals
 set nowrap                            " Don't wrap long lines
 set listchars=extends:→               " Show arrow if line continues rightwards
 set listchars+=precedes:←             " Show arrow if line continues leftwards
+set listchars+=tab:>·                 " Show tabs
+set listchars+=trail:·                " Show trailing whitespaces
 set nobackup nowritebackup noswapfile " Turn off backup files
 set noerrorbells novisualbell         " Turn off visual and audible bells
+set autoindent                        " Always set autoindenting on
+set copyindent                        " Copy the previous indentation on autoindenting
 set expandtab shiftwidth=2 tabstop=2  " Two spaces for tabs everywhere
 set history=500
 set hlsearch                          " Highlight search results
@@ -69,7 +79,7 @@ set undolevels=1000
 set undoreload=10000
 
 " [===========================================================================]
-" | INTERFACE 
+" | INTERFACE                                                                 |
 " [===========================================================================]
 
 set number            " Enable line numbers
@@ -80,33 +90,22 @@ set sidescrolloff=10  " Leave 10 characters of horizontal buffer when scrolling
 highlight Comment cterm=italic gui=italic
 
 " [===========================================================================]
-" | INDENTATION  
+" | RUSSIAN LANGUAGE FIX                                                      |
 " [===========================================================================]
 
-" Кол-во символов пробелов, которые будут заменять \t
-set tabstop=2
-set shiftwidth=2
-set smarttab
-" Автозамена по умолчанию
-set expandtab
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
 
-set autoindent    " always set autoindenting on
-set copyindent    " copy the previous indentation on autoindenting
+" Spellcheck
+" set spell spelllang=ru_ru,en_us
+set nospell
 
-" Показываем табы в начале строки точками
-set list
-set listchars=tab:>·,trail:·,precedes:#,extends:#,nbsp:·
-
-set noundofile
-
-" russian language fix
-set langmap=ё`,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,фa,ыs,вd,аf,пg,рh,оj,лk,дl,э',яz,чx,сc,мv,иb,тn,ьm,б\\,,ю.,Ё~,ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Э\\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>
-
-" encodings
+" Encodings
 set fileencodings=utf-8,windows-1251,iso-8859-15,koi8-r
 
 " [===========================================================================]
-" | MAPPING 
+" | MAPPING                                                                   |
 " [===========================================================================]
 
 map <C-n> :NERDTreeToggle<CR>
