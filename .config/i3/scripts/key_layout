@@ -1,0 +1,12 @@
+#!/bin/bash
+
+STATE=$(xset -q | grep 02: | cut --delimiter=":" --fields=7 | cut --delimiter=" " --fields=2);
+
+if [[ "$STATE" == "off" ]]
+then
+  LANG="en"
+else
+  LANG="ru"
+fi
+
+echo "$LANG"
