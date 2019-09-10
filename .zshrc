@@ -1,3 +1,7 @@
+# [==================]
+# | suiljex | .zshrc |
+# [==================]
+
 # Installation:
 # curl -L git.io/antigen > antigen.zsh
 
@@ -27,4 +31,3 @@ antigen theme risto
 # Tell Antigen that you're done.
 antigen apply
 
-export PATH=/snap/bin:$PATH
